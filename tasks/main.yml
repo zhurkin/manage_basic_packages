@@ -1,0 +1,14 @@
+---
+
+- name: Install packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ ( manage_basic_packages_install | default([]) ) + ( manage_basic_packages_install_other | default([]) ) }}"
+
+- name: Remove packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: absent
+  loop: "{{ ( manage_basic_packages_remove | default([]) ) + ( manage_basic_packages_remove_other | default([]) ) }}"
+  when: ( manage_basic_packages_remove or manage_basic_packages_remove_other is defined )

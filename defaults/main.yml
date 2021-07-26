@@ -1,0 +1,5 @@
+---
+manage_basic_packages_install: []
+manage_basic_packages_install_other: []
+manage_basic_packages_remove: []
+manage_basic_packages_remove_other: []
