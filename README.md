@@ -3,18 +3,33 @@ Manage basic packages
 
 Manage (add and/or remove) packages
 
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
 Role Variables
 --------------
 
-manage_basic_packages_install: []
-manage_basic_packages_install_other: []
-manage_basic_packages_remove: []
-manage_basic_packages_remove_other: []
+`manage_basic_packages_install`: []
+
+`manage_basic_packages_install_other`: []
+
+`manage_basic_packages_remove`: []
+
+`manage_basic_packages_remove_other`: []
+
+Example Variables
+-----------------
+
+    manage_basic_packages_install:
+      - mc
+      - htop
+      - jq
+
+    manage_basic_packages_remove:
+      - nmap
+
+If you need to add and/or remove additional packages that are not needed for all machine packages, 
+but only for a group or a separate machine, use the variables 
+manage_basic_packages_install_other
+and
+manage_basic_packages_remove_other
 
 Example Playbook
 ----------------
@@ -32,4 +47,5 @@ License
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Vladimir Zhurkin 
+ ansible@icce.im
