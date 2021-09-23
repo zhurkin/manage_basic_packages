@@ -26,10 +26,10 @@ Example Variables
       - nmap
 
 If you need to add and/or remove additional packages that are not needed for all machine packages, 
-but only for a group or a separate machine, use the variables 
-manage_basic_packages_install_other
-and
-manage_basic_packages_remove_other
+but only for a group or a separate machine, use the variables    
+`manage_basic_packages_install_other`    
+and    
+`manage_basic_packages_remove_other`  
 
 Example Playbook
 ----------------
